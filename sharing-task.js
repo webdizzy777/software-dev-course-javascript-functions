@@ -36,7 +36,14 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+function badge(name, role){
+    return `Name: ${name}, Role: ${capitalizeRole(role)}`;
+}
+function capitalizeRole(role){
+    return String(role).charAt(0).toUpperCase() + String(role).slice(1);
+}
 
+console.log(badge("Sally","cook"));
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
 // ============================================
@@ -44,12 +51,25 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Takes number of attendees and cost per attendee.
 // - Applies a 10% discount if attendees exceed 100.
 // - Returns the total cost.
-
+ 
 // Steps:
 // 1. Multiply attendees by cost.
 // 2. Check if attendee count is over 100.
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
+
+function totalCost(price, attendees){
+    if(attendees > 100){
+        let cost = (price * attendees) * .90;
+        return "$" + cost.toFixed(2);
+    } else {
+        cost = price * attendees;
+        return "$" + cost.toFixed(2);
+    }
+}
+
+console.log(totalCost(10, 110));
+console.log(totalCost(110, 100));
 
 
 // ============================================
@@ -64,6 +84,18 @@ reusable functions that solve specific tasks. This activity encourages:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
 
+function validateEmail(email){
+    if (String(email).includes("@") && String(email).includes(".")){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(validateEmail("email@you.com"));
+console.log(validateEmail("email@youcom"));
+console.log(validateEmail("emailyou.com"));
+console.log(validateEmail("emailyoucom"));
 
 // ============================================
 // 🧠 Collaborative Steps
